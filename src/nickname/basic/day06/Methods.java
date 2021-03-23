@@ -20,6 +20,10 @@ public class Methods {
         //           반환타입이 없는 경우 void 로 정의
         // 매개변수목록 : 메서드 호출시 전달하는 변수 지정
 
+        // 메서드 호출
+        // 메서드명()
+        // 메서드명(매개변수값)
+
         // ex) 1 ~ 10 사이 난수 10개 생성 v1
         for(int i = 1; i <= 10; ++i) {
             int magic = (int) (Math.random() * 10) + 1;
@@ -45,6 +49,10 @@ public class Methods {
         sayHello3("World");  // Hello, World
         sayHello3("Java");   // Hello, Java
 
+        // 인삿말 출력 v4 - 반환타입이 있는 메서드
+        String say = sayHello4("Python");
+        System.out.println(say);
+
 
     } // main
 
@@ -66,8 +74,15 @@ public class Methods {
     }
 
     // 간단한 인삿말을 출력하는 메서드 3
+    // 인삿말을 구성한 후 콘솔에 출력
     public static void sayHello3(String msg) {
-        System.out.println("Hello, "+ msg +"!!");
+        System.out.println("Hello, " + msg + "!!");
+    }
+
+    // 간단한 인삿말을 출력하는 메서드 4
+    public static String sayHello4(String msg) {
+        String say = "Hello, " + msg + "!!";
+        return say;
     }
 
     
