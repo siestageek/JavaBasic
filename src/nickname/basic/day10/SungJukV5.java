@@ -8,7 +8,29 @@ import java.util.Scanner;
 public class SungJukV5 {
     
     public static void main(String[] args) {
+        // 클래스에 대한 객체 생성하기
+        // 클래스명 객체명 = new 클래스명()
+
+        // 상속을 받은 클래스에 대한 객체 생성하기
+        // 클래스명 객체명 = new 클래스명()
+        // 부모클래스명 객체명 = new 자식클래스명() (!!)
+        // Cat c = new Cat()
+        // Animal cd = new Cat()   (!!)
+        // cd = new Dog()          (!!)
+
+        // 인터페이스를 구현한 클래스 객체 생성하기
+        // 인터페이스 객체명 = new 클래스명()
+        //SungJukV5ServiceImpl sjsrv = new SungJukV5ServiceImpl();
+        SungJukV5Service sjsrv = new SungJukV5ServiceImpl();
+
+        // 성적데이터 입력받기
+        SungJukVO sj = sjsrv.readSungJuk();
         
+        // 입력받은 성적데이터를 처리함
+        sjsrv.computeSungJuk(sj);
+        
+        // 처리된 성적데이터 출력하기
+        sjsrv.printSungJuk(sj);
     }
 
 }
