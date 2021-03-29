@@ -3,6 +3,19 @@ package nickname.basic.sungjuk;
 import java.util.Scanner;
 
 public class SungJukServiceImpl implements SungJukService {
+
+    // 싱글톤 패턴 시작
+    private static SungJukService sjsrv = null;
+
+    private SungJukServiceImpl() {
+    }
+
+    public static SungJukService getInstance() {
+        if (sjsrv == null) sjsrv = new SungJukServiceImpl();
+        return sjsrv;
+    }
+    // 싱글톤 패턴 끝
+
     @Override
     public void displayMenu() {
         String displaymenu =

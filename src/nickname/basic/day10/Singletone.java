@@ -8,6 +8,7 @@ public class Singletone {
     //       하나의 객체를 재사용하므로 메모리 낭비를 방지
     //   private 생성자, static 변수 사용, 객체에 대한 getter 정의
     public static void main(String[] args) {
+
         ServiceOne so1 = new ServiceOne();
         so1.name = "첫번째";
 
