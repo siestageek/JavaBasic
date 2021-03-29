@@ -1,13 +1,14 @@
-package nickname.basic.day09;
+package nickname.basic.day10;
 
 public class StarCraft2 {
+    // 인터페이스 기반으로 스타크래프트의 유닛을 정의해 봄
     public static void main(String[] args) {
-        SCV s = new SCV();
+        SCV2 s = new SCV2();
         s.attack();
         s.move();
         s.specialAbility();
 
-        Marine m = new Marine();
+        Marine2 m = new Marine2();
         m.attack();
         m.move();
         m.specialAbility();
@@ -23,21 +24,29 @@ abstract class Unit2 {
     protected int mineral;
     protected int gas;
 
-    public Unit() {
+    public Unit2() {
     }
 
-    abstract public void attack();
-    abstract public void move();
-    abstract public void specialAbility();
+    //abstract public void attack();
+    //abstract public void move();
+    //abstract public void specialAbility();
 }
 
-class SCV extends Unit {
+// 추상클래스에서 정의했던 추상메서드를
+// 독립적인 코드들로 분리함 -> 인터페이스
+interface Unit2Action {
+    abstract public void attack();
+    void move();         // abstract public 생략 가능
+    void specialAbility();
+}
+
+class SCV2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "융합절단기를 이용해서 대상에 %d의 피해를 주고있습니다\n";
     final String fmtmove = "지정한 위치로 %.2f 속도로 이동중입니다\n";
     final String fmtspabty = "대상을 수리하는 중입니다\n";
 
-    public SCV() {
+    public SCV2() {
         name = "건설로봇";
         hp = 45;
         power = 5;
@@ -65,13 +74,13 @@ class SCV extends Unit {
     }
 }
 
-class Marine extends Unit {
+class Marine2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "가우스소총을 이용해서 대상에 %d의 피해를 주고있습니다\n";
     final String fmtmove = "지정한 위치로 %.2f 속도로 이동중입니다\n";
     final String fmtspabty = "전투자극제를 사용해서 이동속도 50%%증가, 공격속도 33%%증가합니다\n";
 
-    public Marine() {
+    public Marine2() {
         name = "해병대";
         hp = 50;
         power = 30;
@@ -96,13 +105,13 @@ class Marine extends Unit {
     }
 }
 
-class Firebat extends Unit {
+class Firebat2 extends Unit2 implements Unit2Action {
 
     final String fmtattck = "화염방사기를 이용해서 대상에 %d의 피해를 주고있습니다\n";
     final String fmtmove = "지정한 위치로 %.2f 속도로 이동중입니다\n";
     final String fmtspabty = "전투자극제를 사용해서 이동속도 50%%증가, 공격속도 33%%증가합니다\n";
     
-    public Firebat() {
+    public Firebat2() {
         name = "화염방사병";
         hp = 50;
         power = 8 * 2;
