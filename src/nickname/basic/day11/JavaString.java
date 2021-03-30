@@ -185,5 +185,19 @@ public class JavaString {
         String result = String.format(fmt, today);
         System.out.println(result);
 
+        // StringBuilder, StringBuffer
+        // String 객체는 불변객체이므로 
+        // 새로운 문자열이 추가되면 기존 공간 대신
+        // 새로운 공간을 생성한 후 추가함 -> 메모리 낭비 심함
+        // StringBuilder나 StringBuffer를 이용하면
+        // 기존 공간에 새로운 문자열을 바로 추가할 수 있으므로
+        // 메모리를 절약할 수 있음
+        // 따라서, + 를 이용해서 문자열을 결합하는 것보다는
+        // StringBuilder를 이용하는 것이 더 나음
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Hello,").append("World").append("!!");
+        System.out.println( sb.toString() );
+
     }
 }
