@@ -1,6 +1,6 @@
 package nickname.basic.day10;
 
-import nickname.basic.sungjuk.SungJukService;
+import nickname.basic.sungjuk.*;
 import nickname.basic.sungjuk.SungJukServiceImpl;
 import nickname.basic.sungjuk.SungJukVO;
 

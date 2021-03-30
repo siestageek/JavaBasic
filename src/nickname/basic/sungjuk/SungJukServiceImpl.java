@@ -48,6 +48,7 @@ public class SungJukServiceImpl implements SungJukService {
         int mat = sc.nextInt();
 
         return new SungJukVO(name,kor,eng,mat);
+
     }
 
     @Override
