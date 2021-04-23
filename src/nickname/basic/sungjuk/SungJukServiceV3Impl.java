@@ -3,7 +3,6 @@ package nickname.basic.sungjuk;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import sun.security.provider.Sun;
 
 import java.io.*;
 import java.util.ArrayList;

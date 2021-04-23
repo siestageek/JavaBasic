@@ -1,9 +1,6 @@
 package nickname.basic.sungjuk;
 
 import nickname.basic.jdbc.JDBCUtil;
-import oracle.jdbc.proxy.annotation.Pre;
-import sun.security.provider.Sun;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
